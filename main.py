@@ -41,10 +41,10 @@ def create_bonus():
     bonus = pygame.Surface(bonus_size)
     bonus.fill(COLOR_RED)
     bonus_rect = pygame.Rect(random.randint(0, WIDTH), 0, *bonus_size)
-    bonus_move = [random.randint0, (-6, -1)]
+    bonus_move = [0, random.randint(1, 6)]
     return [bonus, bonus_rect, bonus_move]
 
-CREATE_BONUS = pygame.USEREVENT2 + 1
+CREATE_BONUS = pygame.USEREVENT + 2
 pygame.time.set_timer(CREATE_BONUS, 1500)
 
 bonuses = []
@@ -85,13 +85,7 @@ while playing:
         bonus[1] = bonus[1].move(bonus[2])
         main_display.blit(bonus[0], bonus[1])
 
-   
-
     main_display.blit(player, player_rect)
-
-   
-
-
     pygame.display.flip()
 
     for enemy in enemies:
